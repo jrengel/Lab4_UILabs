@@ -5,6 +5,7 @@ import java.util.List;
 
 import android.content.Context;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -18,6 +19,7 @@ public class ToDoListAdapter extends BaseAdapter {
 
 	private final List<ToDoItem> mItems = new ArrayList<ToDoItem>();
 	private final Context mContext;
+
 
 	private static final String TAG = "Lab-UserInterface";
 
@@ -83,13 +85,22 @@ public class ToDoListAdapter extends BaseAdapter {
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
 
+		LayoutInflater inflater = LayoutInflater.from(mContext);
+		if (convertView == null) {
+
+			RelativeLayout itemLayout = null;
+			itemLayout = (RelativeLayout) inflater.inflate(R.layout.todo_item, parent, false);
+
+		}
+
 		// TODO - Get the current ToDoItem
 		final ToDoItem toDoItem = null;
 
 
 		// TODO - Inflate the View for this ToDoItem
 		// from todo_item.xml
-		RelativeLayout itemLayout = null;
+		//RelativeLayout itemLayout = null;
+
 
 		// Fill in specific ToDoItem data
 		// Remember that the data that goes in this View
