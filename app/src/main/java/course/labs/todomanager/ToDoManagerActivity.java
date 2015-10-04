@@ -69,8 +69,8 @@ public class ToDoManagerActivity extends ListActivity {
 			@Override
 			public void onClick(View v) {
 				//TODO - Implement OnClick().
-				Intent intent = new Intent(this, AddToDoActivity.class);
-				startActivity(intent);
+				Intent intent= new Intent(getApplicationContext(), AddToDoActivity.class);
+				startActivityForResult(intent, 1);
 			}
 		});
 
@@ -90,9 +90,9 @@ public class ToDoManagerActivity extends ListActivity {
 		// and then add it to the adapter
 		if (requestCode == 1){
 			if (resultCode == RESULT_OK){
-				newItem
+				ToDoItem newItem = new ToDoItem(data);
 				mAdapter.add(newItem);
-
+				mAdapter.notifyDataSetChanged();
 			}
 
 		}

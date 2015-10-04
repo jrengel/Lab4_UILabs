@@ -112,12 +112,11 @@ public class AddToDoActivity extends Activity {
 				mTitleText.setText("");
 				mPriorityRadioGroup.check(R.id.medPriority);
 				mStatusRadioGroup.check(R.id.statusNotDone);
-
-                
                 
                 
 				// reset date and time
 				setDefaultDateTime();
+
 
 			}
 		});
